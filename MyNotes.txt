@@ -1,0 +1,28 @@
+;a0 holds the index of start of bitmap
+;a1 holds current spot in bitmap data
+;a2 holds reference to sp for subroutine args
+;a3 holds next row pos
+
+;Draw Registers
+;d0 = trap code
+;d1 = pen color / draw x val
+;d2 = draw y val
+;d3 = stores row number
+;d4 = used for conversions / for offset value
+;d5 = used for conversions / for offset value
+;d6 = iterator width
+;d7 = iterator height
+
+;d1 = Width/Height of total image => High.W = Width, Low.W = Height (NOT FROM USER)
+;d2 = Left,Top Corner of bitmap chunk => High.w = Left, Low.W = Top
+;d3 = Width/Height of bitmap chunk => High.w = Width, Low.W = Height
+;d4 = Left,Top Corner of output display to display bitmap chunk => High.w = Left, Low.w = Top
+;             V
+;0(sp) = Total Image Width
+;2(sp) = Total Image Height
+;4(sp) = Left B.Chunk Pos
+;6(sp) = Top B.Chunk Pos
+;8(sp) = Width B.Chuk
+;10(sp) = Height B.Chunk
+;12(sp) = Left Output Pos
+;14(sp) = Top Output Pos
